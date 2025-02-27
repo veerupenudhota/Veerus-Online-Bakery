@@ -1,0 +1,13 @@
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\controller\AdminController.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\controller\ShopController.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\dto\ProductDto.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\ECommrceProjectApplication.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\entity\Admin.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\entity\Category.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\entity\Product.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\repository\AdminRepository.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\repository\CategoryRepository.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\repository\ProductRepository.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\service\AdminService.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\service\CategoryService.java
+C:\MyProjects\Veerus-Online-Bakery\src\main\java\com\pvb\springboot\veeru\service\ProductService.java
