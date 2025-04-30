@@ -74,15 +74,15 @@
   <h3>Add a new Product</h3>
   <form th:action="@{/admin/products/add}" method="post"
         th:object="${productDTO}" enctype="multipart/form-data">
-    <input type="hidden" name="id" th:field="*{id}">
+    <input type="hidden" th:field="*{id}">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" required th:field="*{name}"
-             name="name" id="name" placeholder="Enter name">
+             id="name" placeholder="Enter name">
     </div>
     <div class="form-group">
       <label for="category">Select Category</label>
-      <select class="form-control" th:field="*{categoryId}" id="category" name="category">
+      <select class="form-control" th:field="*{categoryId}" id="category" name="categoryId">
         <option th:each="category : ${categories}"
                 th:value="${category.id}"
                 th:text="${category.name}">
@@ -92,32 +92,32 @@
     <div class="form-group">
       <label for="price">Price</label>
       <input type="number" class="form-control" required th:field="*{price}"
-             name="price" id="price" placeholder="Price">
+             id="price" placeholder="Price">
     </div>
     <div class="form-group">
       <label for="weight">Weight in grams</label>
       <input type="number" class="form-control" required th:field="*{weight}"
-             name="weight" id="weight" placeholder="Weight">
+             id="weight" placeholder="Weight">
     </div>
     <div class="form-group">
       <label for="description">Product Description</label>
       <textarea class="form-control" rows="5" th:field="*{description}"
-                name="description" id="description"></textarea>
+                id="description"></textarea>
     </div>
     <div class="form-group">
       <p style="color:white;font-size:20px;">Product Image</p>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" name="productImage"
-               accept="image/jpeg, image/png" id="productImage" />
+        <input type="file" class="custom-file-input"
+               accept="image/jpeg, image/png" id="productImage" name="productImage" />
         <label class="custom-file-label" for="productImage">Choose file</label>
       </div>
       <div class="form-group">
         <img id="imgPreview" height="100px" width="100px"
              th:if="${productDTO.imageName != null}"
              th:src="@{'/productImages/' + ${productDTO.imageName}}"
-             src="" style="margin-top: 20px" alt="Product image">
+             style="margin-top: 20px" alt="Product image">
       </div>
-      <input type="hidden" name="imgName" th:value="${productDTO.imageName}">
+      <input type="hidden" th:field="*{imageName}">
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
