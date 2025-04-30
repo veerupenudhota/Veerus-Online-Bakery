@@ -130,29 +130,33 @@ public class AdminController {
 	}
 
 	@PostMapping("/admin/products/add")
-	public String postAddproduct(@ModelAttribute("productDt") ProductDto p,
-			@RequestParam("productImage") MultipartFile file, @RequestParam("imgName") String imgName)
-			throws IOException {
-		Product pro = new Product();
-		pro.setId(p.getId());
-		pro.setName(p.getName());
-		pro.setPrice(p.getPrice());
-		pro.setDescription(p.getDescription());
-		pro.setWeight(p.getWeight());
-		pro.setCategory(cservice.fetchById(p.getCategoryId()).get());
-		String imageUUID;
-		if (!file.isEmpty()) {
-			imageUUID = file.getOriginalFilename();
-			Path path = Paths.get(uploadDir, imageUUID);
-			Files.write(path, file.getBytes());
-		} else {
-			imageUUID = imgName;
-		}
-		pro.setImageName(imageUUID);
-		pservice.saveProduct(pro);
-		return "redirect:/admin/products";
+public String postAddProduct(
+    @ModelAttribute("productDTO") ProductDto p,
+    @RequestParam("productImage") MultipartFile file,
+    @RequestParam("imgName") String imgName
+) throws IOException {
+    Product pro = new Product();
+    pro.setId(p.getId());
+    pro.setName(p.getName());
+    pro.setPrice(p.getPrice());
+    pro.setDescription(p.getDescription());
+    pro.setWeight(p.getWeight());
+    pro.setCategory(cservice.fetchById(p.getCategoryId()).get());
 
-	}
+    String imageUUID;
+    if (!file.isEmpty()) {
+        imageUUID = file.getOriginalFilename();
+        Path path = Paths.get(uploadDir, imageUUID);
+        Files.write(path, file.getBytes());
+    } else {
+        imageUUID = imgName;
+    }
+    pro.setImageName(imageUUID);
+
+    pservice.saveProduct(pro);
+    return "redirect:/admin/products";
+}
+
 
 	@GetMapping("/admin/product/delete/{id}")
 	public String deleteProduct(@PathVariable("id") long id) {
