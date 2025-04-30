@@ -1,65 +1,42 @@
-# Veerus Online Bakery 🧁
+# Veerus Online Bakery
 
-An e-commerce web application for an online bakery store, built with modern web technologies and a robust backend. This platform allows users to browse delicious baked goods by category, view detailed product descriptions, and experience a smooth shopping interface.
+A full-stack e-commerce bakery application built using **Spring Boot**, **Java**, **PostgreSQL**, **HTML**, **CSS**, and **JavaScript**. This app enables customers to browse and purchase bakery items like cakes, chips, biscuits, puffs, and rolls — all organized by category.
 
-## 🚀 Tech Stack
+---
 
-- **Backend:** Spring Boot, Java
+## 🛠️ Tech Stack
+
+- **Backend:** Java, Spring Boot
 - **Frontend:** HTML, CSS, JavaScript
 - **Database:** PostgreSQL
 - **Build Tool:** Maven
+- **Deployment:** Render (or local host)
 
-## 📂 Project Structure
+---
 
-ecommerce/ │ ├── src/ │ ├── main/ │ │ ├── java/ # Java source files │ │ ├── resources/ # application.properties, templates, static assets │ ├── pom.xml # Maven project configuration └── README.md # Project documentation
+## 📁 Project Structure
+src/ ├── main/ │ ├── java/ │ │ └── com.veerus.bakery/ # Controllers, Services, Models │ └── resources/ │ ├── static/ # CSS, JS, images │ ├── templates/ # HTML (Thymeleaf or JSP) │ └── application.properties └── test/
 
-markdown
-Copy
-Edit
 
-## 💡 Features
+---
 
-- Admin panel for managing categories and products
-- Product listings grouped by categories (e.g., Cakes, Chips, Biscuits, Puffs, Rolls, Chocolates)
-- Detailed product descriptions
-- Real-time bakery listings
-- PostgreSQL database integration
-- Clean and responsive user interface
+## 📦 Features
 
-## 🛠️ Getting Started
+- 🔐 Admin Login with access control
+- 🛍️ Category-wise product listing (e.g. Cakes, Chips, Chocolates)
+- 📦 Add/Edit/Delete Products (admin only)
+- 🗂️ PostgreSQL integration for dynamic data storage
+- 🎨 Responsive front-end layout
+- 🖼️ Manual image addition and linking for products
 
-### Prerequisites
+---
 
-- Java 17+
-- Maven
-- PostgreSQL
-- Git
+## ⚙️ Setup Instructions
 
-### Setup Instructions
+1. **Clone the repository:**
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/veerupenudhota/Veerus-Online-Bakery.git
-   cd Veerus-Online-Bakery
-Configure PostgreSQL
+```bash
+git clone https://github.com/veerupenudhota/Veerus-Online-Bakery.git
+cd Veerus-Online-Bakery
 
-Create a database named ecommerce
 
-Update application.properties with your DB credentials:
-
-ini
-Copy
-Edit
-spring.datasource.url=jdbc:postgresql://localhost:5432/ecommerce
-spring.datasource.username=yourUsername
-spring.datasource.password=yourPassword
-Run the application
-
-bash
-Copy
-Edit
-mvn spring-boot:run
-Access the app Open your browser and go to: http://localhost:8080
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
