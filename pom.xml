@@ -44,8 +44,6 @@
     <artifactId>postgresql</artifactId>
     <version>42.7.2</version>
 </dependency>
-
-
         <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -53,19 +51,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>3.2.5</version>
-            <configuration>
-                <mainClass>com.pvb.springboot.veeru.EcommerceProjectApplication</mainClass>
-            </configuration>
-        </plugin>
-    </plugins>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <version>3.2.5</version>
+      <configuration>
+        <mainClass>com.pvb.springboot.veeru.EcommerceProjectApplication</mainClass>
+      </configuration>
+    </plugin>
+  </plugins>
 </build>
-
-
 </project>
