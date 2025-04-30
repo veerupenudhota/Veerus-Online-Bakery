@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ECommrceProjectApplication {
-
+public class EcommerceProjectApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ECommrceProjectApplication.class, args);
+		SpringApplication.run(EcommerceProjectApplication.class, args);
 	}
 
 }
