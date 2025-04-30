@@ -132,8 +132,7 @@ public class AdminController {
 	@PostMapping("/admin/products/add")
 public String postAddProduct(
     @ModelAttribute("productDTO") ProductDto p,
-    @RequestParam("productImage") MultipartFile file,
-    @RequestParam("imgName") String imgName
+    @RequestParam("productImage") MultipartFile file
 ) throws IOException {
     Product pro = new Product();
     pro.setId(p.getId());
@@ -141,7 +140,9 @@ public String postAddProduct(
     pro.setPrice(p.getPrice());
     pro.setDescription(p.getDescription());
     pro.setWeight(p.getWeight());
-    pro.setCategory(cservice.fetchById(p.getCategoryId()).get());
+
+    Optional<Category> categoryOpt = cservice.fetchById(p.getCategoryId());
+    categoryOpt.ifPresent(pro::setCategory);
 
     String imageUUID;
     if (!file.isEmpty()) {
@@ -149,15 +150,13 @@ public String postAddProduct(
         Path path = Paths.get(uploadDir, imageUUID);
         Files.write(path, file.getBytes());
     } else {
-        imageUUID = imgName;
+        imageUUID = p.getImageName();
     }
     pro.setImageName(imageUUID);
 
     pservice.saveProduct(pro);
     return "redirect:/admin/products";
 }
-
-
 	@GetMapping("/admin/product/delete/{id}")
 	public String deleteProduct(@PathVariable("id") long id) {
 		pservice.deleteById(id);
