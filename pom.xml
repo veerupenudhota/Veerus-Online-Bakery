@@ -70,7 +70,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.pvb.YourMainClass</mainClass> <!-- Change this to your actual main class -->
+                   <mainClass>com.pvb.springboot.veeru.EcommerceProjectApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
