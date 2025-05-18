@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h2 class="text-danger">Something went wrong.</h2>
+    <p th:text="${timestamp}"></p>
+    <p th:text="${path}"></p>
+    <p th:text="${error}"></p>
+    <a th:href="@{/}" class="btn btn-primary mt-3">Back to home</a>
+</body>
+</html>
