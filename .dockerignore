@@ -1,0 +1,6 @@
+# keep the build-context small & predictable
+target/
+.git
+.idea/
+*.iml
+Dockerfile

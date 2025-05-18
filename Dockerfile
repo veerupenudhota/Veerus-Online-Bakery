@@ -1,23 +1,20 @@
 # -------- BUILD STAGE --------
 FROM maven:3.9.6-eclipse-temurin-21 AS build
-
 WORKDIR /app
 
-# Copy the entire project
-COPY . .
+COPY pom.xml .                     
+RUN mvn -q dependency:go-offline
 
-# Build the project and skip tests
-RUN mvn clean package -DskipTests
+COPY src ./src                     
+RUN mvn -q clean package -DskipTests
 
 # -------- RUNTIME STAGE --------
 FROM eclipse-temurin:21-jdk-jammy
-
 WORKDIR /app
 
-# Copy the JAR from the build stage
 COPY --from=build /app/target/Veerus-Online-Bakery-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 8080
+# ⚠ Render injects $PORT; forward it to Spring
+ENV SERVER_PORT=$PORT
 
-# Run the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
